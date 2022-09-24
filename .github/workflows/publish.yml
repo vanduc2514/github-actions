@@ -28,6 +28,9 @@ jobs:
         # Serve the file
         run: cp -r ./build ./docs
 
+      - name: Cleanup Build folder
+        run: rm -r ./build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         # If you're changing the branch from main,
@@ -37,9 +40,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: pages
           publish_dir: ./build
-      
-      - name: Cleanup Build folder
-        run: rm -r ./build
 
       - name: Echo Finish
         run: echo Finish Deployment
