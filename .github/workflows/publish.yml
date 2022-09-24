@@ -35,7 +35,7 @@ jobs:
         # below accordingly.
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: pages  
+          publish_branch: pages 
           publish_dir: ./build
       
       - name: Cleanup Build folder
